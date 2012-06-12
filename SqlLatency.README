@@ -1,0 +1,33 @@
+This addon integrates MySQL latency into smokeping. The variables <host>, <user>
+and <password> must be specified in order for the probe to work.
+Requires perl-DBI.
+
+Authors: Alex Negulescu <alecs@altlinux.org>
+
+To add this probe to your instance, copy the pm file to lib/Smokeping/probes/.
+
+Also, configure the module:
+
+*** Probes ***
+
++ SqlLatency
+
+username = myusername
+password = mypassword
+pings = 3
+step = 60
+forks = 2
+offset = 50%
+
+And the host:
+
+++ ServerSQL
+
+menu = ServerSQL
+title = ServerSQL
+probe = SqlLatency
+host = ip.ad.dr.ess
+
+TODO:
+A lot of stuff, but for now it works like this.
+Feel free to contribute.
